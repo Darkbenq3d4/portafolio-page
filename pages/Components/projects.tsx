@@ -1,4 +1,4 @@
-import styles from 'styles/Home.module.css';
+import styles from 'styles/projects.module.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import  projectsJSON from 'json/projects.json';
 
@@ -20,25 +20,27 @@ export default function projects(
 {
     return(
         <Container hidden={props.isHidden}>
-            {
-                projectsJSON.map((items) => (
-                    <Row style={{display: props.display}}>
+            <Row style={{display: props.display}}>
+                {
+                projectsJSON.map((items, index) => (
                 <Col>
-                <div className={styles.card} hidden={props.isHidden}>
-                    <h2>{items.Title}</h2>
-                    <p>{items.Description}</p>
-                    <a href={items.Github}><h4>Github Page</h4></a>
-                    <h4>Technologies Used</h4>
-                    <ul>
-                        {items.Technologies.map((techs) => (
-                            <li>{techs}</li>
-                        ))}
-                    </ul>
-                </div>
+                    <div className={styles.card} hidden={props.isHidden}>
+                        <h2>{items.Title}</h2>
+                        <p>{items.Description}</p>
+                        <a href={items.Github}><h4 className={styles.github}>Github Page</h4></a>
+                        <h4>Technologies Used</h4>
+                        <ul>
+                            {items.Technologies.map((techs, index) => (
+                                <li key={index}>
+                                    {techs}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </Col>
-            </Row>
                 ))
             }
+            </Row>
         </Container>
     )
 }
