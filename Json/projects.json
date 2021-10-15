@@ -1,0 +1,21 @@
+[{
+    "id": 1,
+    "Title": "My Presentation Page",
+    "Description": "A simple portafolio and presentation webpage",
+    "Technologies": ["React JS", "Bootstrap", "NextJS", "Typescript"],
+    "Github":"a"
+}, {
+    "id": 2,
+    "Title": "Covid-19 DR Data Scrapper",
+    "Description": "Little JS app that scrapps Coronavirusrd.gob.do map for Covid-19 confirmed, recovered and deaths cases on DR.",
+    "Technologies": ["JS", "NodeJS"],
+    "Github":"https://github.com/Darkbenq3d4/Covid-19-DR-Data-Scrapper"
+},
+{
+    "id": 3,
+    "Title": "Eagle Prediction System - Admin's Dashboard",
+    "Description": "A full dashboard and admin page for administrators personell in the Eagle Prediction System platform.",
+    "Technologies": ["Angular 8","Bootstrap", "Firebase", "Typescript", "SCSS"],
+    "Github":"https://github.com/Darkbenq3d4/Eagle-P.S.-Dashboard"
+}
+]
