@@ -3,7 +3,7 @@
     "Title": "My Presentation Page",
     "Description": "A simple portafolio and presentation webpage",
     "Technologies": ["React JS", "Bootstrap", "NextJS", "Typescript"],
-    "Github":"a"
+    "Github":"https://github.com/Darkbenq3d4/portafolio-page"
 }, {
     "id": 2,
     "Title": "Covid-19 DR Data Scrapper",
