@@ -1,0 +1,14 @@
+.oval{
+    height: 10px;
+    width: 100px;
+    border-radius: 30%;
+    background-color: brown;
+    position: relative;
+    top: 15px;
+}
+
+.stacker{
+    position: absolute;
+    max-width: 100%;
+    margin-left: 110px;
+}

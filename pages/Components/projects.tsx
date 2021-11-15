@@ -23,7 +23,7 @@ export default function projects(
             <Row style={{display: props.display}}>
                 {
                 projectsJSON.map((items, index) => (
-                <Col>
+                <Col key={index}>
                     <div className={styles.card} hidden={props.isHidden}>
                         <h2>{items.Title}</h2>
                         <p>{items.Description}</p>
