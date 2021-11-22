@@ -5,11 +5,14 @@ import { ChakraProvider } from '@chakra-ui/react';
 import theme from '../themes/themes';
 import '@fontsource/rancho'
 import '@fontsource/raleway'
+import Navbar from 'components/Navbar/navbar';
+
 
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
+      <Navbar />
       <Component {...pageProps} />
     </ChakraProvider>
   )
