@@ -1,34 +1,20 @@
-import { ReactNode } from "react";
 import { Box,
     Flex,
     Avatar,
-    Link,
     Button,
     Container,
     ButtonGroup,
     useColorMode,
+    Link,
     Heading, } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import style from "styles/navbar.module.css";
-
-const NavLink = ({ children }: {children:ReactNode}) => (
-    <Link 
-        px={2}
-        py={1}
-        rounded = {'md'}
-        _hover ={{
-            textDecoration: 'none',
-        }}
-        href={'#'}>
-            {children}
-        </Link>
-)
 
 export default function Navbar() {
     const {colorMode, toggleColorMode} = useColorMode();
     return(
         <Container maxW="container.lg">
-            <Box px={4} >
+            <Box px={4} borderBottom={"1px"}  >
                 <Flex alignItems={'center'} px={'15'} py="1%" justifyContent="space-between">
                 <Box w="50%">
                     <Flex alignItems="center">
@@ -42,13 +28,13 @@ export default function Navbar() {
                 <Flex className={style.NavbarLinks} alignItems={'center'} mt={50}>
                     <ButtonGroup variant="link" spacing="25" >
                     <Button fontSize={25}>
-                        Who I Am
+                        <Link href="/">Who I Am</Link>
                     </Button>
                     <Button fontSize={25}>
-                        What I Know
+                        <Link href='/knowledge'>What I Know</Link>
                     </Button>
                     <Button fontSize={25}>
-                        Projects
+                        <Link href='/projects'>Projects</Link>
                     </Button>
                     <Button onClick={toggleColorMode}>
                         {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}

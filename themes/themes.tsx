@@ -5,6 +5,13 @@ const theme = extendTheme({
     heading: "Rancho",
     body: "Raleway",
   },
+  components: {
+    Text: {
+      baseStyle: {
+        fontFamily: "Maitree",
+      }
+    }
+  },
 })
 
 export default theme
