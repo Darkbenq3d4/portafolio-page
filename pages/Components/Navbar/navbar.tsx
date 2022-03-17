@@ -14,7 +14,7 @@ export default function Navbar() {
     const {colorMode, toggleColorMode} = useColorMode();
     return(
         <Container maxW="container.lg">
-            <Box px={4} borderBottom={"1px"}  >
+            <Box px={4}  boxShadow={"0px 2px 0px #989898"}>
                 <Flex alignItems={'center'} px={'15'} py="1%" justifyContent="space-between">
                 <Box w="50%">
                     <Flex alignItems="center">

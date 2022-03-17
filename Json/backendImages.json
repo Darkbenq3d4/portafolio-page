@@ -1,0 +1,27 @@
+[
+    {
+        "key": 0,
+        "src_root":"/Backend/nest-js-logo.svg",
+        "title":"NestJS Framework"
+    },
+    {
+        "key": 1,
+        "src_root":"/Backend/Django-Logo.png",
+        "title":"Django Framework"
+    },
+    {
+        "key": 2,
+        "src_root":"/Backend/Flask_logo.svg",
+        "title":"Flask Framework"
+    },
+    {
+        "key": 3,
+        "src_root":"/Backend/NET_Core_Logo.svg",
+        "title":".NET Core Framework"
+    },
+    {
+        "key": 4,
+        "src_root":"/Backend/Node.js_logo.svg",
+        "title":"Node Js Framework"
+    }
+]
