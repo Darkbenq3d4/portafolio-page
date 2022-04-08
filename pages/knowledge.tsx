@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Container, Text, HStack, Box, Img, UnorderedList, ListItem, Stack } from "@chakra-ui/react"
+import { Container, Text, HStack, Box, Img, UnorderedList, ListItem, Grid, Stack, VStack, GridItem } from "@chakra-ui/react"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import backendImagesJson from "../Json/backendImages.json";
 import devopsImagesJson from "../Json/devopsImages.json";
@@ -20,8 +20,8 @@ export default function WhatDoIknow() {
     return(
         ImageArrays.map(
           ({key, src_root, title}) =>  
-            <ListItem my={"5px"} mx={"5"}>
-                <Img key={key.toString()} src={src_root} alt={title} boxSize={'100px'} width={'150px'}/>
+            <ListItem my={"5px"} mx={"5"} key={key.toString()}>
+                <Img src={src_root} alt={title} boxSize={'100px'} width={'150px'}/>
             </ListItem>
           )
     )
@@ -33,31 +33,30 @@ export default function WhatDoIknow() {
     <Head>
       <title>David Rosario - What I Know</title>
     </Head>
-    <Container maxW="container.lg" centerContent my="10vh">
-      <HStack spacing="10px">
-        <Box>
-          <Text fontSize="xl" fontFamily="Raleway" fontStyle="italic" fontWeight="semibold">Frontend Design!</Text>
-          <Text fontWeight={"light"}>No matter how good a product is without a good brand that represents it.</Text>
+    <Container maxW="container.lg" centerContent my="10vh"> 
+    <HStack>   
+          <Box>
+            <Text fontSize="xl" fontFamily="Raleway" fontStyle="italic" fontWeight="semibold">Frontend Design!</Text>
+            <Text fontWeight={"light"}>No matter how good a product is without a good brand that represents it.</Text>
+            <UnorderedList styleType={"none"}>
+              {frameworkList(frontendImages)}
+            </UnorderedList>
+          </Box>
+          <Box>
+            <Text fontSize="xl" fontFamily="Raleway" fontStyle="italic" fontWeight="semibold">Backend Work!</Text>
+            <Text fontWeight={"light"}>The beauty of a book is not in the portrait, but the content inside the same book.</Text> 
+            <UnorderedList styleType={"none"}>
+              {frameworkList(backendImages)}
+            </UnorderedList>
+          </Box>
+          <Box>
+          <Text fontSize="xl" fontFamily="Raleway" fontStyle="italic" fontWeight="semibold">DevOps!</Text>
+          <Text fontWeight={"light"}>Tools and frameworks for all your DevOps needs.</Text>
           <UnorderedList styleType={"none"}>
-            {frameworkList(frontendImages)}
+            {frameworkList(devopsImages)}
           </UnorderedList>
-        </Box>
-        <Box>
-          <Text fontSize="xl" fontFamily="Raleway" fontStyle="italic" fontWeight="semibold">Backend Work!</Text>
-          <Text fontWeight={"light"}>The beauty of a book is not in the portrait, but the content inside the same book.</Text> 
-          <UnorderedList styleType={"none"}>
-            {frameworkList(backendImages)}
-          </UnorderedList>
-        </Box>
-        <Box>
-        <Text fontSize="xl" fontFamily="Raleway" fontStyle="italic" fontWeight="semibold">DevOps!</Text>
-        <Text fontWeight={"light"}>Tools and frameworks for all your DevOps needs.</Text>
-        <UnorderedList styleType={"none"}>
-          {frameworkList(devopsImages)}
-        </UnorderedList>
-        </Box>
-
-      </HStack>
+          </Box>
+          </HStack>
     </Container>
 
     </>
