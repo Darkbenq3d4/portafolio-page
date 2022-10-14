@@ -1,13 +1,25 @@
 import style from 'styles/whoiam.module.css';
 import { Container, Text, Button, HStack, Box, Image } from "@chakra-ui/react"
+import { motion } from 'framer-motion';
+
 
 export default function WhoIAm()
 {
+let srcImage = "/Frontend/framer-logo.png";
     return(
         <Container maxW="container.lg" centerContent my="23vh"> 
             <HStack spacing="150px">
                 <Box>
-                    <Image alt="Stock" boxSize={200}  src="https://static.boredpanda.com/blog/wp-content/uploads/2017/12/funny-weird-wtf-stock-photos-19-5a3926af95d9d__700.jpg"></Image>
+                    <motion.div
+                     animate={{ y:0, x:0, scale:1}} 
+                     transition={{}}
+                     initial={{ scale: 0}}>
+                    <Image
+                     alt="Stock"
+                     boxSize={200}
+                     src={srcImage}>
+                     </Image>
+                    </motion.div>
                 </Box>
                 <Box className={style.Intro} width={'md'}>
                 <Text  fontSize="xl" fontFamily="Raleway" fontStyle="italic" fontWeight="semibold" >Hi, I’m name is David. I’m a front-end and backend developer living in Dominican Republic</Text>
