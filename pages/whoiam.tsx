@@ -1,25 +1,44 @@
 import style from 'styles/whoiam.module.css';
 import { Container, Text, Button, HStack, Box, Image } from "@chakra-ui/react"
-import { motion } from 'framer-motion';
-
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function WhoIAm()
 {
-let srcImage = "/Frontend/framer-logo.png";
+const images = [
+    "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+];
+const [imageKey, setImageKey] = useState(0);
+useEffect(() => {
+    const interval = setInterval(() => {
+        setImageKey((Key) => Key + 1);
+        if(imageKey == images.length - 1) setImageKey(0);      
+    }, 5000);
+    return () => clearInterval(interval);
+})
     return(
         <Container maxW="container.lg" centerContent my="23vh"> 
             <HStack spacing="150px">
                 <Box>
-                    <motion.div
-                     animate={{ y:0, x:0, scale:1}} 
-                     transition={{}}
-                     initial={{ scale: 0}}>
-                    <Image
-                     alt="Stock"
-                     boxSize={200}
-                     src={srcImage}>
-                     </Image>
-                    </motion.div>
+                    <AnimatePresence exitBeforeEnter>
+                        <motion.div
+                         initial={{opacity:0}}
+                         animate={{
+                            opacity:1,
+                            transition: {
+                                duration: 0.5
+                            }
+                         }}
+                         exit={{opacity:0}}
+                         key={imageKey}>
+                            <Image
+                            alt="Stock"
+                            boxSize={200}
+                            src={images[imageKey]} 
+                            />
+                        </motion.div>
+                    </AnimatePresence>
                 </Box>
                 <Box className={style.Intro} width={'md'}>
                 <Text  fontSize="xl" fontFamily="Raleway" fontStyle="italic" fontWeight="semibold" >Hi, I’m name is David. I’m a front-end and backend developer living in Dominican Republic</Text>
