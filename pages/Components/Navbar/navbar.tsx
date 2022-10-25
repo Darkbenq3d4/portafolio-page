@@ -5,8 +5,9 @@ import { Box,
     Container,
     ButtonGroup,
     useColorMode,
-    Link,
+    Link as Chakralink,
     Heading, } from '@chakra-ui/react';
+import LinkNext from 'next/link';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import style from "styles/navbar.module.css";
 import { motion } from 'framer-motion';
@@ -36,13 +37,21 @@ export default function Navbar() {
                         <Flex className={style.NavbarLinks} alignItems={'center'} mt={50}>
                             <ButtonGroup variant="link" spacing="25" >
                                 <Button fontSize={25}>
-                                    <Link href="/">Who I Am</Link>
+                                    <LinkNext href="/">
+                                       <Chakralink>Who I Am</Chakralink>
+                                    </LinkNext>
                                 </Button>
                                 <Button fontSize={25}>
-                                    <Link href='/knowledge'>What I Know</Link>
+                                    <LinkNext href='/knowledge'>
+                                        <Chakralink>What I Know</Chakralink>
+                                    </LinkNext>
                                 </Button>
                                 <Button fontSize={25}>
-                                    <Link href='/projects'>Projects</Link>
+                                    <LinkNext href='/projects'>
+                                        <Chakralink>
+                                            Projects
+                                        </Chakralink>
+                                    </LinkNext>
                                 </Button>
                                 <Button onClick={toggleColorMode}>
                                     {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}

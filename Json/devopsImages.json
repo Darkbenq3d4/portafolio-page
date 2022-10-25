@@ -1,22 +1,7 @@
 [
-    {
-        "key": 0,
-        "src_root":"/DevOps/logo-git.png",
-        "title":"Git"
-    },
-    {
-        "key": 1,
-        "src_root":"/DevOps/docker-logo.png",
-        "title":"Docker"
-    },
-    {
-        "key": 2,
-        "src_root":"/DevOps/kuber-logo.png",
-        "title":"Kubernetes"
-    },
-    {
-        "key": 3,
-        "src_root":"/DevOps/Jenkins_logo.svg",
-        "title":"Jenkins"
-    }
+    "/DevOps/logo-git.png",
+    "/DevOps/docker-logo.png",
+    "/DevOps/kuber-logo.png",
+    "/DevOps/Jenkins_logo.svg"
+    
 ]

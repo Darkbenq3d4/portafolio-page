@@ -2,7 +2,7 @@ import style from 'styles/whoiam.module.css';
 import { Container, Text, Button, HStack, Box, Image } from "@chakra-ui/react"
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-
+import Slideshow from 'components/slideshow';
 export default function WhoIAm()
 {
 const images = [
@@ -13,36 +13,11 @@ const images = [
     "https://seeklogo.com/images/N/nestjs-logo-09342F76C0-seeklogo.com.png",
     "https://upload.wikimedia.org/wikipedia/fr/2/2e/Java_Logo.svg"
 ];
-const [imageKey, setImageKey] = useState(0);
-useEffect(() => {
-    const interval = setInterval(() => {
-        setImageKey((Key) => Key + 1);
-        if(imageKey == images.length - 1) setImageKey(0);      
-    }, 5000);
-    return () => clearInterval(interval);
-})
     return(
         <Container maxW="container.lg" centerContent my="23vh"> 
             <HStack spacing="150px">
                 <Box>
-                    <AnimatePresence exitBeforeEnter>
-                        <motion.div
-                         initial={{opacity:0}}
-                         animate={{
-                            opacity:1,
-                            transition: {
-                                duration: 0.5
-                            }
-                         }}
-                         exit={{opacity:0}}
-                         key={imageKey}>
-                            <Image
-                            alt="Stock"
-                            boxSize={200}
-                            src={images[imageKey]} 
-                            />
-                        </motion.div>
-                    </AnimatePresence>
+                    <Slideshow imagesArray={images} />
                 </Box>
                 <Box className={style.Intro} width={'md'}>
                 <Text 
