@@ -2,7 +2,7 @@ import style from 'styles/whoiam.module.css';
 import { Container, Text, Button, HStack, Box, Image } from "@chakra-ui/react"
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import Slideshow from 'components/slideshow';
+import Slideshow from '../Components/slideshow';
 export default function WhoIAm()
 {
 const images = [

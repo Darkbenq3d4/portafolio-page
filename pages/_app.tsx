@@ -6,8 +6,8 @@ import theme from '../themes/themes';
 import '@fontsource/rancho'
 import '@fontsource/raleway'
 import '@fontsource/maitree'
-import Navbar from 'Components/Navbar/navbar';
-import Footer from 'Components/Footer/footer';
+import Navbar from '../Components/Navbar/navbar';
+import Footer from '../Components/Footer/footer';
 
 
 

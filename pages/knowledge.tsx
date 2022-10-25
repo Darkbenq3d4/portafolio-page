@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import backendImagesJson from "../Json/backendImages.json";
 import devopsImagesJson from "../Json/devopsImages.json";
 import frontendImagesJson from "../Json/frontendImages.json";
-import Slideshow from 'components/slideshow';
+import Slideshow from '../Components/slideshow';
 
 export default function WhatDoIknow() {
 
