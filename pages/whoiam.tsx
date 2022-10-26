@@ -13,6 +13,34 @@ const images = [
     "https://seeklogo.com/images/N/nestjs-logo-09342F76C0-seeklogo.com.png",
     "https://upload.wikimedia.org/wikipedia/fr/2/2e/Java_Logo.svg"
 ];
+const btnVariant = {
+    rest: {scale: 1},
+    hover: {scale: 1.5}
+}
+const textVariant = {
+    rest: {scale: 1, x:'50%', ease:'easeIn', type:"tween"},
+    hover: {
+        scale: 0,
+        x:'-50%',
+        transition:{
+            duration: 0.2,
+            type: 'tween',
+            ease:'easeOut'
+        }
+    }
+}
+const textVariant2 = {
+    rest: {scale: 0, x:'50%', ease:'easeOut', duration: 0.2, type:'tween'},
+    hover: {
+        scale:1,
+        x:'-50%',
+        transition:{
+            duration: 0.2,
+            type:'tween',
+            ease:'easeIn'
+        }
+    }
+}
     return(
         <Container maxW="container.lg" centerContent my="23vh"> 
             <HStack spacing="150px">
@@ -31,13 +59,28 @@ const images = [
                     I specialize in web development, yet this is only one of my milestones as I still see and learn new frameworks every now and then. My objectives are simple
                     and I always want my clients to have amazing products with great design and amazing performance.
                 </Text>
-                <Button
-                 mt="5"
-                 as={motion.button}
-                 whileHover={{ scale: 1.5, backgroundColor:'rgb(124, 191, 176)'}}
-                 >
-                    Interested? Let&apos;s talk!
-                </Button>
+                <motion.div
+                 initial='rest'
+                 whileHover='hover'
+                 animate='rest'>
+                    <Button
+                     mt="5"
+                     as={motion.button}
+                     variants={btnVariant}>
+                        <Text
+                         as={motion.p}
+                         variants={textVariant}
+                         justifyContent='center'>
+                        Interested?&nbsp;
+                        </Text>
+                        <Text 
+                         as={motion.p}
+                         variants={textVariant2}
+                        > 
+                        Let&apos;s talk!
+                        </Text>
+                    </Button>
+                </motion.div>
                 </Box>
             </HStack>
         </Container>
